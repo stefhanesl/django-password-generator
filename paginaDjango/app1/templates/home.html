@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+
+    <form action="password">
+        <label for="length">Selecciona la longitud de tu contrasenia</label>
+        <select name="length" id="length">
+            <option value="6">6 caracteres</option>
+            <option value="7">7 caracteres</option>
+            <option value="8">8 caracteres</option>
+            <option value="9">9 caracteres</option>
+            <option value="10">10 caracteres</option>
+            <option value="11">11 caracteres</option>
+            <option value="12">12 caracteres</option>
+        </select>
+
+        <label for="mayuscula">Mayuscula</label>
+        <input type="checkbox" name="mayuscula" id="mayuscula">
+
+        <button type="submit">Generar contrasenia</button>
+    </form>
+
+</body>
+</html>
