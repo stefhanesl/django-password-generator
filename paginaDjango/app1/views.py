@@ -1,5 +1,6 @@
 from django.shortcuts import render
 #from django.http import HttpResponse
+import random
 
 # Create your views here.
 def about(request):
@@ -11,4 +12,25 @@ def home(request):
 
 
 def password(request):
-    return render(request, 'password.html')
+
+    caracteres = list('abcdefghijklmnopqrstuvwxyz')
+    clave_generada = ''
+
+    numero_contrasenia = int(request.GET.get('length'))
+
+    if request.GET.get('mayuscula'):
+        caracteres.extend(list('abcdefghijklmnopqrstuvwxyz'.upper()))
+
+    if request.GET.get('numeros'):
+        caracteres.extend(list('1234567890'.upper()))
+
+
+    if request.GET.get('caracteres_especiales'):
+        caracteres.extend(list('.,-*+/%$&()@#'.upper()))
+
+
+    for elemento in range(numero_contrasenia):
+        clave_generada += random.choice(caracteres)
+
+
+    return render(request, 'password.html', {'password': clave_generada})

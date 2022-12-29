@@ -9,7 +9,7 @@
 <body>
     <h1>Password Generator</h1>
 
-    <form action="password">
+    <form action="{% url 'password' %}">
         <label for="length">Selecciona la longitud de tu contrasenia</label>
         <select name="length" id="length">
             <option value="6">6 caracteres</option>
@@ -23,6 +23,12 @@
 
         <label for="mayuscula">Mayuscula</label>
         <input type="checkbox" name="mayuscula" id="mayuscula">
+
+        <label for="numeros">Numeros</label>
+        <input type="checkbox" name="numeros" id="numeros">
+
+        <label for="caracteres_especiales">Caracteres especiales</label>
+        <input type="checkbox" name="caracteres_especiales" id="caracteres_especiales">
 
         <button type="submit">Generar contrasenia</button>
     </form>
