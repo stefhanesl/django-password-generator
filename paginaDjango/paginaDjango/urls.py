@@ -19,7 +19,8 @@ from app1 import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('about', views.about),
-    path('', views.home),
+    path('about', views.about, name='about'),
+    path('', views.home,  name='home'),
+    #name sirve para pasarle ese identificador al formulario
     path('generate-password', views.password, name='password' )
 ]
